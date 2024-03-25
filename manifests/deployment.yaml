@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: complete-production-e2e-deployment
 spec:
-  replicas: 2
+  replicas: 2 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
       app: complete-production-e2e-app
@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: complete-production-e2e-app
-        image: tompli/e2e-pipepline:1.0.0-43
+        image: tompli/e2e-pipepline:1.0.0-43 # Replace with the actual image tag
         resources:
           limits:
             memory: "256Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 80 # Replace with the port your Tetris game listens on
